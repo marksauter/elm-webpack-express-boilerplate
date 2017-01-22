@@ -1,0 +1,6 @@
+target
+elm-stuff
+node_modules/
+npm-debug.log
+public/bundle.js
+yarn.lock

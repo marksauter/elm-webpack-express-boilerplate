@@ -1,0 +1,28 @@
+{
+  "name": "byte-board",
+  "version": "1.0.0",
+  "description": "Like a whiteboard, but with bytes.",
+  "scripts": {
+    "start": "node server.js",
+    "dist": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glenjamin/byte-board.git"
+  },
+  "author": "Glen Mailer <glen@stainlessed.co.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/glenjamin/byte-board/issues"
+  },
+  "homepage": "https://github.com/glenjamin/byte-board#readme",
+  "devDependencies": {
+    "elm": "^0.18.0",
+    "elm-hot-loader": "^0.5.4",
+    "elm-webpack-loader": "^4.2.0",
+    "express": "^4.13.4",
+    "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "^2.15.0"
+  }
+}
