@@ -1,21 +1,23 @@
 module Home exposing (..)
 
 import Html exposing (..)
+import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
 
+
+(=>) : a -> b -> ( a, b )
+(=>) = (,)
 
 
 -- MODEL
 
 
-type alias Model =
-  { message: String }
+type alias Model = String
 
 
 
-init : (Model, Cmd Msg)
-init =
-  { message = "Hello!" } ! [] 
+model : Model
+model = "" 
 
 
 -- UPDATE
@@ -24,28 +26,26 @@ init =
 type Msg 
   = Message
 
-update : Msg -> Model -> (Model, Cmd Msg)
+update : Msg -> Model -> Model
 update msg model =
   case msg of
     Message ->
-      Model "World!" ! []
+      "Hello, World!"
     
-
-
--- SUBSCRIPTIONS
-
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-  Sub.none
-
-
 
 -- VIEW
 
 
 view : Model -> Html Msg
 view model =
-  div []
-    [ label [ onClick Message ] [ text model.message ]
+  div 
+    [ style 
+      [ "background-color" => "blue"
+      , "width" => "500px"
+      , "height" => "500px"
+      , "font-size" => "175px"
+      ]
+    , onClick Message
     ]
+    [ text model ]
+    

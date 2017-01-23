@@ -9,6 +9,8 @@ var compiler = webpack(webpackConfig);
 
 var app = express();
 
+process.argv.push("--watch");
+
 app.use(require("webpack-dev-middleware")(compiler, {
     noInfo: true, publicPath: webpackConfig.output.publicPath
 }));
@@ -20,7 +22,7 @@ app.get('/', function(req, res) {
 
 var server = http.createServer(app);
 
-var port = process.env.PORT || '7654'
+var port = process.env.PORT || '3000'
 
 server.listen(port, function() {
   console.log("Listening on http://localhost:" + port);
