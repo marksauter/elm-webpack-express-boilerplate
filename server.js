@@ -9,6 +9,7 @@ var compiler = webpack(webpackConfig);
 
 var app = express();
 
+// Temporary fix for hot reload with elm-webpack-loader, tricks it into thinking webpack-dev-server is in "watch" mode
 process.argv.push("--watch");
 
 app.use(require("webpack-dev-middleware")(compiler, {
